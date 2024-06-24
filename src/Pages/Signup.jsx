@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import rio from '../Assets/rio.png';
+import { useNavigate } from 'react-router-dom';
 import rio1 from '../Assets/rio1.png';
 
 function Signup() {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         nik: '',
