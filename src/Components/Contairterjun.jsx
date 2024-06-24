@@ -11,7 +11,7 @@ function Contairterjun() {
           <li className='text-lg m-2'><a href="/Pantai" className="hover:text-black text-gray-500 tracking-widest relative group">Pantai<div className="absolute w-full h-[9px] my-2 rounded-t-[20px] bg-[#BFE7F7] scale-x-0 group-hover:scale-x-100"/></a></li>
           <li className='text-lg m-2 ml-10 '><a href="/Gunung" className="hover:text-black text-gray-500 tracking-widest relative group">Gunung<div className="absolute w-full h-[9px] my-2 rounded-t-[20px] bg-[#BFE7F7] scale-x-0 group-hover:scale-x-100"/></a></li>
           <li className='text-lg m-2 ml-10'><a href="/Airterjun" className="hover:text-black text-gray-500 tracking-widest relative group">AirTerjun<div className="absolute w-full h-[9px] my-2 rounded-t-[20px] bg-[#BFE7F7] scale-x-0 group-hover:scale-x-100"/></a></li>
-          <li className='text-lg m-2 ml-10'><a href="" className="hover:text-black text-gray-500 tracking-widest relative group">Lainnya<div className="absolute w-full h-[9px] my-2 rounded-t-[20px] bg-[#BFE7F7] scale-x-0 group-hover:scale-x-100"/></a></li>
+          <li className='text-lg m-2 ml-10'><a href="/Lainnya" className="hover:text-black text-gray-500 tracking-widest relative group">Lainnya<div className="absolute w-full h-[9px] my-2 rounded-t-[20px] bg-[#BFE7F7] scale-x-0 group-hover:scale-x-100"/></a></li>
         </ul>
       </div>
       <div className='h-[1600px] bg-[#EDF5F9]'>

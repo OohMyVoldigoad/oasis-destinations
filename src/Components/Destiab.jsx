@@ -61,7 +61,7 @@ function Destiab() {
                 <p className='text-white text-xl'>Klik tombol untuk melihat destinasi wisata pantai yang ada di berbagai kota</p>
                 </div>
                 <div className='-translate-y-[170px] ml-[1100px] mt-8'>
-                    <a href=""><img src={next} alt="" /></a>
+                    <a href="/Airterjun"><img src={next} alt="" /></a>
                 </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@ function Destiab() {
                 <p className='text-white text-xl'>Klik tombol untuk melihat destinasi wisata pantai yang ada di berbagai kota</p>
                 </div>
                 <div className='-translate-y-[170px] ml-[1100px] mt-8'>
-                    <a href=""><img src={next} alt="" /></a>
+                    <a href="/Lainnya"><img src={next} alt="" /></a>
                 </div>
                 </div>
             </div>

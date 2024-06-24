@@ -2,11 +2,11 @@ import React from 'react'
 
 function Contact() {
   return (
-    <div className='h-[600px]'>
-        <h1 className='text-E font-semibold text-center text-[24px] py-20'>UMPAN BALIK KEPUASAN</h1>
-        <div className=''>
+    <div className='-translate-y-[300px]'>
+        <h1 className='text-E font-semibold text-center text-[24px]'>UMPAN BALIK KEPUASAN</h1>
+        <div className='translate-y-16'>
             <form className='flex'>
-                <div className=' px-48'>
+                <div className='px-48'>
                     <label htmlFor="name" className='mx-3 block text-E text-sm font-semibold mb-1'>Full Name*</label>
                     <input type="text" id='name' name='name' className='shadow-xl w-[526px] h-[60px] px-4 py-2 border-2 border-E rounded-md outline-none' placeholder='Enter your full name here' required />
                     <label htmlFor="Email" className='mx-3 block text-E text-sm font-semibold mb-1 my-6'>Email*</label>
@@ -19,10 +19,7 @@ function Contact() {
                 </div>
             </form>
         </div>
-
     </div>
-    
-
   )
 }
 
