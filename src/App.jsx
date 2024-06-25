@@ -17,7 +17,9 @@ import Admindashboard from './Pages/Dashboard/Admindashboard';
 import Adminkelolawisata from './Pages/Dashboard/Adminkelolawisata';
 import Adminakunpengelola from './Pages/Dashboard/Adminakunpengelola';
 import Admintambahwisata from './Pages/Dashboard/Admintambahwisata';
+import Adminkelolapengguna from './Pages/Dashboard/Adminkelolapengguna';
 import Payment from './Pages/Payment';
+import Adminhistorypemesanan from './Pages/Dashboard/Adminhistorypemesanan';
 import ProtectedRoute from './Components/ProtectedRoute';
 
 function App() {
@@ -27,126 +29,23 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/" element={<Home />} />
-        <Route 
-          path="/About" 
-          element={
-            <ProtectedRoute>
-              <About />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/Destination" 
-          element={
-            <ProtectedRoute>
-              <Destination />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/News" 
-          element={
-            <ProtectedRoute>
-              <News />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/Pantai" 
-          element={
-            <ProtectedRoute>
-              <Pantai />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/Gunung" 
-          element={
-            <ProtectedRoute>
-              <Gunung />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/Airterjun" 
-          element={
-            <ProtectedRoute>
-              <Airterjun />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/Descplengkung" 
-          element={
-            <ProtectedRoute>
-              <Descplengkun />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/Descarjuno" 
-          element={
-            <ProtectedRoute>
-              <Descarjuno />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/Desctumpaksewu" 
-          element={
-            <ProtectedRoute>
-              <Desctumpaksewu />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/Profile" 
-          element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/Admindashboard" 
-          element={
-            <ProtectedRoute>
-              <Admindashboard />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/Adminkelolawisata" 
-          element={
-            <ProtectedRoute>
-              <Adminkelolawisata />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/Adminakunpengelola" 
-          element={
-            <ProtectedRoute>
-              <Adminakunpengelola />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/Admintambahwisata" 
-          element={
-            <ProtectedRoute>
-              <Admintambahwisata />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/Payment" 
-          element={
-            <ProtectedRoute>
-              <Payment />
-            </ProtectedRoute>
-          } 
-        />
+        <Route path="/About" element={<ProtectedRoute><About /></ProtectedRoute>} />
+        <Route path="/Destination" element={<ProtectedRoute><Destination /></ProtectedRoute>} />
+        <Route path="/News" element={<ProtectedRoute><News /></ProtectedRoute>} />
+        <Route path="/Pantai" element={<ProtectedRoute><Pantai /></ProtectedRoute>} />
+        <Route path="/Gunung" element={<ProtectedRoute><Gunung /></ProtectedRoute>} />
+        <Route path="/Airterjun" element={<ProtectedRoute><Airterjun /></ProtectedRoute>} />
+        <Route path="/Descplengkung" element={<ProtectedRoute><Descplengkun /></ProtectedRoute>} />
+        <Route path="/Descarjuno" element={<ProtectedRoute><Descarjuno /></ProtectedRoute>} />
+        <Route path="/Desctumpaksewu" element={<ProtectedRoute><Desctumpaksewu /></ProtectedRoute>} />
+        <Route path="/Profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+        <Route path="/Admindashboard" element={<ProtectedRoute ><Admindashboard /></ProtectedRoute>} />
+        <Route path="/Adminkelolawisata" element={<ProtectedRoute ><Adminkelolawisata /></ProtectedRoute>} />
+        <Route path="/Adminkelolapengguna" element={<ProtectedRoute ><Adminkelolapengguna /></ProtectedRoute>} />
+        <Route path="/Adminakunpengelola" element={<ProtectedRoute ><Adminakunpengelola /></ProtectedRoute>} />
+        <Route path="/Admintambahwisata" element={<ProtectedRoute ><Admintambahwisata /></ProtectedRoute>} />
+        <Route path="/Adminhistorypemesanan" element={<ProtectedRoute ><Adminhistorypemesanan /></ProtectedRoute>} />
+        <Route path="/Payment" element={<ProtectedRoute><Payment /></ProtectedRoute>} />
       </Routes>
     </Router>
   );

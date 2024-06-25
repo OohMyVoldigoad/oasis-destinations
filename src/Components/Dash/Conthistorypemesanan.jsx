@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import orgggg from '../../Assets/orgggg.png';
 
-function Contakunpengelola() {
+function Conthistorypemesanan() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -31,12 +31,7 @@ function Contakunpengelola() {
   };
   return (
     <div className='ml-[303px] mt-1 border-2 bg-white w-[1333px] h-[999px] absolute -translate-y-[1000px]'>
-      <h1 className='text-[25px] font-semibold ml-3 mt-2'>Akun Pengelola</h1>
-      <div className='float-start'>
-        <a href="/Adminkelolapengguna">
-          <button className='border-2 py-0.5 px-1 ml-3 rounded-lg text-white bg-blue-300'>Tambah</button>
-        </a>
-      </div>
+      <h1 className='text-[25px] font-semibold ml-3 mt-2'>History Pemesanan</h1>
       <div className='float-end mr-5 flex'>
         <h1 className='text-[#464E5F] text-[14px] mt-4 mr-2'>Show</h1>
         <form action="" className='w-16 h-5 flex border-2 rounded-md mr-4 mt-4'>
@@ -57,9 +52,9 @@ function Contakunpengelola() {
           <thead className='bg-[#27738E]'>
             <tr className='text-white'>
               <th className="py-2">NO</th>
-              <th className="px-2 py-2">FOTO</th>
-              <th className="px-4 py-2">NAMA</th>
-              <th className="px-4 py-2">PENGELOLA</th>
+              <th className="px-2 py-2">Nama Pengguna</th>
+              <th className="px-4 py-2">Nama Wisata</th>
+              <th className="px-4 py-2"></th>
               <th className="px-4 py-2">USERNAME</th>
               <th className="px-4 py-2">PASSWORD</th>
               <th className="px-4 py-2">EMAIL</th>
@@ -80,6 +75,7 @@ function Contakunpengelola() {
                 <td>{user.no}</td>
                 <td>
                   <div className='mt-3'>
+                    <button className='px-2 py-1 border-2 rounded-xl bg-blue-100 text-gray-500'>Detail</button>
                     <button onClick={() => handleDelete(user.id)} className='px-2 py-1 border-2 rounded-xl bg-red-200 text-white'>Hapus</button>
                   </div>
                 </td>
@@ -92,4 +88,4 @@ function Contakunpengelola() {
   );
 }
 
-export default Contakunpengelola;
+export default Conthistorypemesanan;

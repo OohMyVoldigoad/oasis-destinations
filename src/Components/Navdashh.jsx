@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import usermin from '../Assets/usermin.png';
+import { useNavigate } from 'react-router-dom';
+
 
 const Navdashh = () => {
+  const navigate = useNavigate();
+
   const [profile, setProfile] = useState({});
+  const handleLogout = () => {
+    localStorage.removeItem('tokenOasis-Destination');
+    navigate('/');
+  };
 
   useEffect(() => {
     const storedProfile = localStorage.getItem('profile');
@@ -29,6 +37,9 @@ const Navdashh = () => {
           <p className='text-[12px] text-[#637381] ml-[58px]'>{profile.role}</p>
         </div>
         <a href="/Profile"><img src={usermin} alt="" /></a>
+        <button onClick={handleLogout} className="px-[20px] py-[5px] text-white border-2 border-E bg-E rounded-md">
+          Logout
+        </button>
       </div>
     </div>
   );

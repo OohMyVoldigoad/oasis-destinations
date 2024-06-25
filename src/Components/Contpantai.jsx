@@ -1,11 +1,27 @@
-import React from 'react'
-import bale from '../Assets/bale.png'
-import beach from '../Assets/beach.png'
-import right from '../Assets/right.png'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import bale from '../Assets/bale.png';
+import beach from '../Assets/beach.png';
+import right from '../Assets/right.png';
 
 function Nav() {
-  return (
+  const [wisata, setWisata] = useState([]);
 
+  useEffect(() => {
+    axios.get('http://localhost:3000/api/get-wisata-pantai')
+      .then(response => {
+        setWisata(response.data);
+      })
+      .catch(error => {
+        console.error('There was an error fetching the data!', error);
+      });
+  }, []);
+
+  const handleSelengkapnya = (id) => {
+    history.push(`/Descplengkung?id=${id}`);
+  };
+
+  return (
     <div>
       <div className='mt-[90px] bg-white h-[55px] grid justify-items-stretch border-b-4'>
         <ul className='flex justify-self-end mr-[200px]'>
@@ -19,73 +35,33 @@ function Nav() {
         <h1 className='text-[48px] font-semibold mx-[130px] py-4'>Pantai</h1>
         <p className='text-[24px] text-gray-400 mx-[130px]'>Menampilkan hasil destinasi pantai</p>
         <div className='py-10'>
-         <div className='flex'> {/* buka box1 */}  
-            <div className='w-[370px] bg-white h-[413px] ml-[130px] border-[3px] rounded-[20px] '> {/*  buka */}
-              <div className='h-[205px]'>
-                <img src={bale} alt="" className='rounded-t-[20px]'/>
-              </div>
-              <div  className='flex h-[39px] bg-[#F1F5F9] -translate-y-[6px]'>
-                <img src={beach} alt="" className='w-[30px] h-[30px] my-1 ml-4'/>
-                <h1 className='text-lg text-gray-500 my-2 ml-2 font-semibold'>Pantai</h1>
-              </div>
-              <div>
-                <h1 className='text-[23px] mx-5 my-1 font-semibold'>Pantai Tiga Warna</h1>
-                <p className='text-sm mx-5 text-gray-400'>06.00-17.00 (Bisa Menginap)</p>
-                <p className='text-sm mx-5 text-gray-400'>Malang</p>
-                <p className='text-[#0BAE7A] font-semibold italic mx-5'>Harga Tiket Masuk</p>
-                <p className='text-[#0047FF] mx-5 font-semibold'>IDR 30.000</p>
-                <div className='flex -translate-y-5 ml-[220px]'>
-                  <p className='text-[12px] underline'>Selengkapnya</p>
-                  <a href="/Descplengkung"><img src={right} alt="" className='mx-2 -my-1'/></a>
+          <div className='flex'> {/* buka box1 */}
+            {wisata.map((item) => (
+              <div key={item.id} className='w-[370px] bg-white h-[413px] ml-[130px] border-[3px] rounded-[20px]'>
+                <div className='h-[205px]'>
+                  <img src={bale} alt="" className='rounded-t-[20px]'/>
+                </div>
+                <div className='flex h-[39px] bg-[#F1F5F9] -translate-y-[6px]'>
+                  <img src={beach} alt="" className='w-[30px] h-[30px] my-1 ml-4'/>
+                  <h1 className='text-lg text-gray-500 my-2 ml-2 font-semibold'>Pantai</h1>
+                </div>
+                <div>
+                  <h1 className='text-[23px] mx-5 my-1 font-semibold'>{item.nama}</h1>
+                  <p className='text-sm mx-5 text-gray-400'>{item.jam_buka} - {item.jam_tutup}</p>
+                  <p className='text-sm mx-5 text-gray-400'>{item.lokasi}</p>
+                  <p className='text-[#0BAE7A] font-semibold italic mx-5'>Harga Tiket Masuk</p>
+                  <p className='text-[#0047FF] mx-5 font-semibold'>{`IDR ${item.harga_tiket_masuk}`}</p>
+                  <div className='flex -translate-y-5 ml-[220px]'>
+                  <p className='text-[12px] underline cursor-pointer' onClick={() => handleSelengkapnya(item.id)}>Selengkapnya</p>                  <a href="/Descplengkung"><img src={right} alt="" className='mx-2 -my-1'/></a>
+                  </div>
                 </div>
               </div>
-            </div> {/*  tutup */}
-            <div className='w-[370px] bg-white h-[413px] ml-[110px] border-[3px] rounded-[20px] '> {/*  buka */}
-              <div className='h-[205px]'>
-                <img src={bale} alt="" className='rounded-t-[20px]'/>
-              </div>
-              <div  className='flex h-[39px] bg-[#F1F5F9] -translate-y-[6px]'>
-                <img src={beach} alt="" className='w-[30px] h-[30px] my-1 ml-4'/>
-                <h1 className='text-lg text-gray-500 my-2 ml-2 font-semibold'>Pantai</h1>
-              </div>
-              <div>
-                <h1 className='text-[23px] mx-5 my-1 font-semibold'>Pantai Tiga Warna</h1>
-                <p className='text-sm mx-5 text-gray-400'>06.00-17.00 (Bisa Menginap)</p>
-                <p className='text-sm mx-5 text-gray-400'>Malang</p>
-                <p className='text-[#0BAE7A] font-semibold italic mx-5'>Harga Tiket Masuk</p>
-                <p className='text-[#0047FF] mx-5 font-semibold'>IDR 30.000</p>
-                <div className='flex -translate-y-5 ml-[220px]'>
-                  <p className='text-[12px] underline'>Selengkapnya</p>
-                  <a href=""><img src={right} alt="" className='mx-2 -my-1'/></a>
-                </div>
-              </div>
-            </div> {/*  tutup */}
-            <div className='w-[370px] bg-white h-[413px] ml-[110px] border-[3px] rounded-[20px] '> {/*  buka */}
-              <div className='h-[205px]'>
-                <img src={bale} alt="" className='rounded-t-[20px]'/>
-              </div>
-              <div  className='flex h-[39px] bg-[#F1F5F9] -translate-y-[6px]'>
-                <img src={beach} alt="" className='w-[30px] h-[30px] my-1 ml-4'/>
-                <h1 className='text-lg text-gray-500 my-2 ml-2 font-semibold'>Pantai</h1>
-              </div>
-              <div>
-                <h1 className='text-[23px] mx-5 my-1 font-semibold'>Pantai Tiga Warna</h1>
-                <p className='text-sm mx-5 text-gray-400'>06.00-17.00 (Bisa Menginap)</p>
-                <p className='text-sm mx-5 text-gray-400'>Malang</p>
-                <p className='text-[#0BAE7A] font-semibold italic mx-5'>Harga Tiket Masuk</p>
-                <p className='text-[#0047FF] mx-5 font-semibold'>IDR 30.000</p>
-                <div className='flex -translate-y-5 ml-[220px]'>
-                  <p className='text-[12px] underline'>Selengkapnya</p>
-                  <a href=""><img src={right} alt="" className='mx-2 -my-1'/></a>
-                </div>
-              </div>
-            </div> {/*  tutup */}
-          </div> {/* tutup box1 */} 
+            ))}
+          </div> {/* tutup box1 */}
         </div>
       </div>
     </div>
-
-  )
+  );
 }
 
-export default Nav
+export default Nav;
